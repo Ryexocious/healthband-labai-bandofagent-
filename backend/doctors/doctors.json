@@ -1,0 +1,58 @@
+{
+  "doctors": [
+    {
+      "id": "dr_001",
+      "name": "Dr. Sarah Rahman",
+      "specialty": "endocrinologist",
+      "availability": "async",
+      "response_sla_hours": 4,
+      "languages": ["en", "bn"],
+      "bio": "Specialist in diabetes, metabolic disorders, and thyroid conditions with 12 years of experience."
+    },
+    {
+      "id": "dr_002",
+      "name": "Dr. James Okonkwo",
+      "specialty": "cardiologist",
+      "availability": "on-call",
+      "response_sla_hours": 1,
+      "languages": ["en"],
+      "bio": "Board-certified cardiologist specializing in hypertension, heart failure, and interventional cardiology."
+    },
+    {
+      "id": "dr_003",
+      "name": "Dr. Emily Chen",
+      "specialty": "radiologist",
+      "availability": "async",
+      "response_sla_hours": 6,
+      "languages": ["en", "zh"],
+      "bio": "Diagnostic radiologist with subspecialty in chest and musculoskeletal imaging."
+    },
+    {
+      "id": "dr_004",
+      "name": "Dr. Amara Osei",
+      "specialty": "pulmonologist",
+      "availability": "on-call",
+      "response_sla_hours": 2,
+      "languages": ["en", "fr"],
+      "bio": "Pulmonary medicine specialist focusing on respiratory disorders, COPD, and critical care."
+    },
+    {
+      "id": "dr_005",
+      "name": "Dr. Raj Patel",
+      "specialty": "neurologist",
+      "availability": "async",
+      "response_sla_hours": 4,
+      "languages": ["en", "hi"],
+      "bio": "Neurologist specializing in stroke, headache disorders, and neuromuscular disease."
+    },
+    {
+      "id": "dr_006",
+      "name": "Dr. Maria Santos",
+      "specialty": "general_practitioner",
+      "availability": "on-call",
+      "response_sla_hours": 1,
+      "languages": ["en", "es"],
+      "bio": "Primary care physician with broad experience in general medicine and preventive care."
+    }
+  ]
+}

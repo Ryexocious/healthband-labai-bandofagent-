@@ -1,0 +1,60 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider             = "prisma-client-py"
+  interface            = "asyncio"
+  recursive_type_depth = 5
+}
+
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  password_hash String
+  role          String   // "PATIENT" or "DOCTOR"
+  name             String
+  theme_preference String   @default("light")
+  email_alerts     Boolean  @default(true)
+  sms_alerts       Boolean  @default(false)
+  created_at       DateTime @default(now())
+  cases            Case[]
+  notifications    Notification[]
+}
+
+model Case {
+  id                     String   @id @default(uuid())
+  case_id                String   @unique
+  band_room_id           String?
+  patient_id             String?
+  patient                User?    @relation(fields: [patient_id], references: [id])
+  status                 String
+  symptoms               String
+  prescription_amount    String?
+  iot_readings           Json?
+  uploaded_files_info    Json?
+  intake_output          Json?
+  diagnostic_output      Json?
+  reviewer_output        Json?
+  liaison_output         Json?
+  solution_output        Json?
+  doctor_response        Json?
+  pharmacy_output        Json?
+  emergency              Boolean  @default(false)
+  emergency_triggered_by String?
+  agent_statuses         Json?
+  created_at             DateTime @default(now())
+}
+
+model Notification {
+  id         String   @id @default(uuid())
+  user_id    String
+  user       User     @relation(fields: [user_id], references: [id])
+  title      String
+  message    String
+  icon       String   @default("notifications")
+  is_read    Boolean  @default(false)
+  created_at DateTime @default(now())
+}
